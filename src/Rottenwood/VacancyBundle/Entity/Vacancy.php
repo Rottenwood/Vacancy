@@ -33,33 +33,9 @@ class Vacancy {
 
     /**
      * @var string
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
-
-    /**
-     * @var string
-     * @ORM\Column(name="nameRu", type="string", length=255, nullable=true)
-     */
-    private $nameRu;
-
-    /**
-     * @var string
-     * @ORM\Column(name="descriptionRu", type="string", length=255, nullable=true)
-     */
-    private $descriptionRu;
-
-    /**
-     * @var string
-     * @ORM\Column(name="nameFr", type="string", length=255, nullable=true)
-     */
-    private $nameFr;
-
-    /**
-     * @var string
-     * @ORM\Column(name="descriptionFr", type="string", length=255, nullable=true)
-     */
-    private $descriptionFr;
 
 
     /**
@@ -68,6 +44,22 @@ class Vacancy {
      */
     public function getId() {
         return $this->id;
+    }
+
+    /**
+     * Set Department
+     * @param Department $department
+     */
+    public function setDepartment($department) {
+        $this->department = $department;
+    }
+
+    /**
+     * Get Department
+     * @return Department
+     */
+    public function getDepartment() {
+        return $this->department;
     }
 
     /**
@@ -106,97 +98,5 @@ class Vacancy {
      */
     public function getDescription() {
         return $this->description;
-    }
-
-    /**
-     * Set nameRu
-     * @param string $nameRu
-     * @return Vacancy
-     */
-    public function setNameRu($nameRu) {
-        $this->nameRu = $nameRu;
-
-        return $this;
-    }
-
-    /**
-     * Get nameRu
-     * @return string
-     */
-    public function getNameRu() {
-        return $this->nameRu;
-    }
-
-    /**
-     * Set descriptionRu
-     * @param string $descriptionRu
-     * @return Vacancy
-     */
-    public function setDescriptionRu($descriptionRu) {
-        $this->descriptionRu = $descriptionRu;
-
-        return $this;
-    }
-
-    /**
-     * Get descriptionRu
-     * @return string
-     */
-    public function getDescriptionRu() {
-        return $this->descriptionRu;
-    }
-
-    /**
-     * Set nameFr
-     * @param string $nameFr
-     * @return Vacancy
-     */
-    public function setNameFr($nameFr) {
-        $this->nameFr = $nameFr;
-
-        return $this;
-    }
-
-    /**
-     * Get nameFr
-     * @return string
-     */
-    public function getNameFr() {
-        return $this->nameFr;
-    }
-
-    /**
-     * Set descriptionFr
-     * @param string $descriptionFr
-     * @return Vacancy
-     */
-    public function setDescriptionFr($descriptionFr) {
-        $this->descriptionFr = $descriptionFr;
-
-        return $this;
-    }
-
-    /**
-     * Get descriptionFr
-     * @return string
-     */
-    public function getDescriptionFr() {
-        return $this->descriptionFr;
-    }
-
-    /**
-     * Set Department
-     * @param Department $department
-     */
-    public function setDepartment($department) {
-        $this->department = $department;
-    }
-
-    /**
-     * Get Department
-     * @return Department
-     */
-    public function getDepartment() {
-        return $this->department;
     }
 }

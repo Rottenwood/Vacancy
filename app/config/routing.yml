@@ -1,0 +1,4 @@
+rottenwood_vacancy:
+    resource: "@RottenwoodVacancyBundle/Resources/config/routing.yml"
+    prefix:   /
+

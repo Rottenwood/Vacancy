@@ -20,6 +20,12 @@ class Vacancy {
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Department")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     */
+    private $department;
+
+    /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255)
      */
@@ -176,5 +182,21 @@ class Vacancy {
      */
     public function getDescriptionFr() {
         return $this->descriptionFr;
+    }
+
+    /**
+     * Set Department
+     * @param Department $department
+     */
+    public function setDepartment($department) {
+        $this->department = $department;
+    }
+
+    /**
+     * Get Department
+     * @return Department
+     */
+    public function getDepartment() {
+        return $this->department;
     }
 }

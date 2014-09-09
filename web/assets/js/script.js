@@ -24,8 +24,9 @@ $(document).ready(function () {
 
     // Get all vacancies of department in chosen language
     function getVacanciesList(department, language) {
+        var departmentForRequest = ++department;
         $.post("api/vacancy/list", {
-                department: department,
+                department: departmentForRequest,
                 language: language
             },
             function (data) {

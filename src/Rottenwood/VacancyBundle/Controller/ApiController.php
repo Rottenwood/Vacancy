@@ -6,8 +6,6 @@
 
 namespace Rottenwood\VacancyBundle\Controller;
 
-use Rottenwood\VacancyBundle\Entity\Department;
-use Rottenwood\VacancyBundle\Entity\Language;
 use Rottenwood\VacancyBundle\Entity\Vacancy;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -19,69 +17,24 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ApiController extends Controller {
 
-    private $em;
-
     public function getDepartmentsAction() {
-        $this->em = $this->getDoctrine()->getManager();
-        $departments = $this->em->getRepository('RottenwoodVacancyBundle:Department')->findAll();
-        $result = array();
+        $departments = $this->get('vacancy.service')->getDepartments();
 
-        foreach ($departments as $department) {
-            /** @var Department $department */
-            $result[] = $department->getName();
-        }
-
-        return new JsonResponse($result);
+        return new JsonResponse($departments);
     }
 
     public function getLanguagesAction() {
-        $this->em = $this->getDoctrine()->getManager();
-        $languages = $this->em->getRepository('RottenwoodVacancyBundle:Language')->findAll();
-        $result = array();
+        $languages = $this->get('vacancy.service')->getLanguages();
 
-        foreach ($languages as $language) {
-            /** @var Language $depa $languages */
-            $result[] = $language->getName();
-        }
-
-        return new JsonResponse($result);
+        return new JsonResponse($languages);
     }
 
     public function getVacanciesAction(Request $request) {
-        $this->em = $this->getDoctrine()->getManager();
-
         $department = $request->request->get('department');
-        $department++;
         $language = $request->request->get('language');
 
-        $vacanciesAll = $this->em->getRepository("RottenwoodVacancyBundle:Vacancy")->findByDepartment
-            ($department);
+        $vacancies = $this->get('vacancy.service')->getVacancies($department, $language);
 
-        $vacanciesTranslated = $this->em->getRepository('RottenwoodVacancyBundle:Translation')->findTranslations($vacanciesAll, $language);
-
-        $vacanciesTranslatedIds = array();
-
-        foreach ($vacanciesTranslated as $vacancyTranslated) {
-            $vacanciesTranslatedIds[] = $vacancyTranslated->getVacancy();
-        }
-
-        $vacanciesWithoutTranslation = array_udiff($vacanciesAll, $vacanciesTranslatedIds,
-            function ($obj_a, $obj_b) {
-                return $obj_a->id - $obj_b->id;
-            }
-        );
-
-        $vacancies = array_merge($vacanciesTranslated, $vacanciesWithoutTranslation);
-
-        $result = array();
-
-        foreach ($vacancies as $vacancy) {
-            /** @var Vacancy $vacancy */
-            $vacancyId = $vacancy->getId();
-            $result[$vacancyId]["title"] = $vacancy->getTitle();
-            $result[$vacancyId]["description"] = $vacancy->getDescription();
-        }
-
-        return new JsonResponse($result);
+        return new JsonResponse($vacancies);
     }
 } 

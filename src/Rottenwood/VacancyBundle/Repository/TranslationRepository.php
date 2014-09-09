@@ -19,9 +19,9 @@ class TranslationRepository extends EntityRepository {
      */
     public function findTranslations($vacancies, $language) {
         $query = $this->getEntityManager()
-            ->createQuery('SELECT t FROM RottenwoodVacancyBundle:Translation t WHERE t.language = :language AND t.vacancy IN ( :vacancy )');
-        $query->setParameter('vacancy', $vacancies);
+            ->createQuery('SELECT t FROM RottenwoodVacancyBundle:Translation t WHERE t.language = :language AND t.vacancy IN ( :vacancies )');
         $query->setParameter('language', $language);
+        $query->setParameter('vacancies', $vacancies);
         $result = $query->getResult();
 
         return $result;

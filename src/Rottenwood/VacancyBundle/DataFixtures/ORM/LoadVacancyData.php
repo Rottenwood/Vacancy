@@ -70,6 +70,10 @@ class LoadVacancyData implements FixtureInterface {
         $this->createTranslation($testerJuniorVacancy, $russian, 'Младший Тестировщик ASM', 'Мы ищем тестировщика для написания функциональных и юнит-тестов на Ассэмблере.');
         $this->createTranslation($testerJuniorVacancy, $french, 'QA Ingénieur Jeune', 'Je suis recruteuse indépendante spécialisée dans l’IT');
 
+        // Test vacancy without translation
+        $fixtureVacancy = $this->createVacancy($itDepartment, 'Fixture Engineer',
+            'Test vacancy without translation to other languages.');
+
         $this->om->flush();
     }
 

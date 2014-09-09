@@ -1,7 +1,8 @@
-parameters:
-#    rottenwood_vacancy.example.class: Rottenwood\VacancyBundle\Example
-
-services:
-#    rottenwood_vacancy.example:
-#        class: %rottenwood_vacancy.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+#parameters:
+#    vacancy.api.controller.class: Rottenwood\VacancyBundle\Controller\ApiController
+#
+#services:
+#    # API controller was made as a service to inject entity manager
+#    vacancy.api.controller:
+#        class: %vacancy.api.controller.class%
+#        arguments: []

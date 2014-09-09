@@ -1,4 +1,11 @@
-body {background-color:white;margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0px;outline:none;}
+body {
+    background-color: white;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    outline: none;
+}
 
 /* Header */
 .header {
@@ -9,9 +16,8 @@ body {background-color:white;margin-left:0px;margin-top:0px;margin-right:0px;mar
     margin-bottom: 30px;
 }
 
-.bookshelfselect {
+.selectors {
     font-size: 20px;
-    /*text-align: right;*/
     margin-top: 45px;
     margin-bottom: 30px;
 }
@@ -20,27 +26,9 @@ body {background-color:white;margin-left:0px;margin-top:0px;margin-right:0px;mar
     text-align: center;
 }
 
-#systemmessage {
-    z-index: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 40px;
-}
-
-.nobooks {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 50px;
-}
-
 /* Table */
-
-div.table-responsive th.edit, div.table-responsive th.delete {
-    width: 120px;
-    text-align: center;
+div.table-responsive th.vacancy-name {
+    width: 200px;
 }
 
 p.center {

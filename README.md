@@ -22,6 +22,13 @@ jQuery приложение: https://github.com/Rottenwood/Vacancy/blob/master/w
 
 Таблица стилей CSS: https://github.com/Rottenwood/Vacancy/blob/master/web/assets/css/style.css
 
+Тесты: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Tests
+
+Команда для запуска тестов:
+~~~
+phpunit -c app/
+~~~
+
 Инструкция по установке
 =======================
 * Клонировать этот репозиторий:
@@ -70,4 +77,3 @@ sudo setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX app/cache app/logs && setfac
 
 ## Установка завершена!
 Проект доступен по адресу http://localhost/vacancy
-

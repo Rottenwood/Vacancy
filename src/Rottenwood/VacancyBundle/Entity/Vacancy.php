@@ -20,6 +20,13 @@ class Vacancy {
     private $id;
 
     /**
+     * Department
+     * @ORM\ManyToOne(targetEntity="Department")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id", nullable=false)
+     */
+    private $department;
+
+    /**
      * Default title of vacancy in English
      * @var string
      * @ORM\Column(name="title", type="string", length=255)
@@ -39,6 +46,20 @@ class Vacancy {
      */
     public function getId() {
         return $this->id;
+    }
+
+    /**
+     * @param mixed $department
+     */
+    public function setDepartment($department) {
+        $this->department = $department;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDepartment() {
+        return $this->department;
     }
 
     /**

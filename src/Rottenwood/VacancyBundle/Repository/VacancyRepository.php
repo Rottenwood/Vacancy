@@ -11,4 +11,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class VacancyRepository extends EntityRepository {
 
+    /**
+     * Request: find all vacancies by department
+     * @param $department
+     * @return array
+     */
+    public function findByDepartment($department) {
+        $query = $this->getEntityManager()
+            ->createQuery('SELECT v FROM RottenwoodVacancyBundle:Vacancy v WHERE v.department = :department');
+        $query->setParameter('department', $department);
+        $result = $query->getResult();
+
+        return $result;
+    }
 }

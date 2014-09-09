@@ -47,7 +47,6 @@ class Translation {
      */
     private $description;
 
-
     /**
      * Get id
      * @return integer

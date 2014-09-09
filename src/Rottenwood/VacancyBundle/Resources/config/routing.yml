@@ -1,3 +1,8 @@
 index:
-    path:     /
+    path:   /
     defaults: { _controller: RottenwoodVacancyBundle:Default:index }
+
+api_vacancies_list:
+    path:   /api/vacancies/list
+    defaults: { _controller: RottenwoodVacancyBundle:Api:getVacancies }
+    requirements: { _method: POST }

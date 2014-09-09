@@ -1,9 +1,6 @@
 body {
     background-color: white;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
+    margin: 0;
     outline: none;
 }
 
@@ -22,16 +19,12 @@ body {
     margin-bottom: 30px;
 }
 
-.table-headers th {
-    text-align: center;
-}
-
 /* Table */
 div.table-responsive th.vacancy-name {
     width: 200px;
 }
 
-p.center {
+.table-headers th, p.center, td p {
     text-align: center;
 }
 
@@ -43,8 +36,4 @@ p.center {
 
 tbody td {
     font-size: 16px;
-}
-
-td p {
-    text-align: center;
 }

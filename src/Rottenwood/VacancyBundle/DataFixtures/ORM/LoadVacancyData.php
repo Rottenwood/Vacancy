@@ -73,6 +73,11 @@ class LoadVacancyData implements FixtureInterface {
         $this->om->flush();
     }
 
+    /**
+     * Create new department
+     * @param string $name
+     * @return Department
+     */
     private function createDepartment($name) {
         $object = new Department();
         $object->setName($name);
@@ -82,6 +87,11 @@ class LoadVacancyData implements FixtureInterface {
         return $object;
     }
 
+    /**
+     * Create new language
+     * @param string $name
+     * @return Language
+     */
     private function createLanguage($name) {
         $object = new Language();
         $object->setName($name);
@@ -91,7 +101,14 @@ class LoadVacancyData implements FixtureInterface {
         return $object;
     }
 
-    private function createVacancy($department, $title, $description) {
+    /**
+     * Create new vacancy
+     * @param Department $department
+     * @param string $title
+     * @param string $description
+     * @return Vacancy
+     */
+    private function createVacancy(Department $department, $title, $description) {
         $object = new Vacancy();
         $object->setDepartment($department);
         $object->setTitle($title);
@@ -102,6 +119,14 @@ class LoadVacancyData implements FixtureInterface {
         return $object;
     }
 
+    /**
+     * Create new translation to vacancy
+     * @param Vacancy  $vacancy
+     * @param Language $language
+     * @param string   $title
+     * @param string   $description
+     * @return Translation
+     */
     private function createTranslation(Vacancy $vacancy, Language $language, $title, $description) {
         $object = new Translation();
         $object->setTitle($title);

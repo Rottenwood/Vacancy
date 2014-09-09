@@ -12,7 +12,7 @@ use Doctrine\ORM\EntityRepository;
 class VacancyRepository extends EntityRepository {
 
     /**
-     * Request: find all vacancies by department
+     * Find all vacancies by department
      * @param $department
      * @return array
      */

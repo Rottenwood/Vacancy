@@ -4,7 +4,19 @@ Vacancy App
 
 Интересные файлы
 ======================
+Контроллеры: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Controller
 
+Сущности для Doctrine: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Entity
+
+Репозитории DQL-запросов: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Repository
+
+Основной сервис: https://github.com/Rottenwood/Vacancy/blob/master/src/Rottenwood/VacancyBundle/Service/VacancyService.php
+
+Вид (view), реализованный без сторонних шаблонизаторов: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Resources/views/Default
+
+jQuery приложение: https://github.com/Rottenwood/Vacancy/blob/master/web/assets/js/script.js
+
+Таблица стилей CSS: https://github.com/Rottenwood/Vacancy/blob/master/web/assets/css/style.css
 
 Инструкция по установке
 =======================

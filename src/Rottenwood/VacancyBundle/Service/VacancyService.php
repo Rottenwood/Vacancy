@@ -6,7 +6,7 @@
 
 namespace Rottenwood\VacancyBundle\Service;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Persistence\ObjectManager;
 use Rottenwood\VacancyBundle\Entity\Department;
 use Rottenwood\VacancyBundle\Entity\Language;
 use Rottenwood\VacancyBundle\Entity\Translation;
@@ -24,12 +24,12 @@ class VacancyService {
     private $departmentRepository;
     private $languageRepository;
 
-    public function __construct(EntityManager $em) {
+    public function __construct(ObjectManager $em) {
         $this->em = $em;
-        $this->vacancyRepository = $this->em->getRepository("RottenwoodVacancyBundle:Vacancy");
-        $this->translationRepository = $this->em->getRepository("RottenwoodVacancyBundle:Translation");
-        $this->departmentRepository = $this->em->getRepository("RottenwoodVacancyBundle:Department");
-        $this->languageRepository = $this->em->getRepository("RottenwoodVacancyBundle:Language");
+        $this->vacancyRepository = $em->getRepository("RottenwoodVacancyBundle:Vacancy");
+        $this->translationRepository = $em->getRepository("RottenwoodVacancyBundle:Translation");
+        $this->departmentRepository = $em->getRepository("RottenwoodVacancyBundle:Department");
+        $this->languageRepository = $em->getRepository("RottenwoodVacancyBundle:Language");
     }
 
     /**

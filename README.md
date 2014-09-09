@@ -2,6 +2,10 @@ Vacancy App
 ===========
 Приложение для отображения списка вакансий, их фильтрации по отделу и языку.
 
+Работающая версия
+=================
+Работающая версия приложения доступна по ссылке: http://utopia.ml/vacancy
+
 Интересные файлы
 ======================
 Контроллеры: https://github.com/Rottenwood/Vacancy/tree/master/src/Rottenwood/VacancyBundle/Controller
@@ -65,3 +69,5 @@ sudo setfacl -R -m u:www-data:rwX -m u:`whoami`:rwX app/cache app/logs && setfac
 ~~~
 
 ## Установка завершена!
+Проект доступен по адресу http://localhost/vacancy
+

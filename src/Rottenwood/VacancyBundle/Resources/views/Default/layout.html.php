@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php $view['slots']->output('title', 'Vacancy CRUD') ?></title>
+    <title><?php $view['slots']->output('title', 'Vacancy App') ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- jQuery -->
     <script type="text/javascript" src="<?php echo $view['assets']->getUrl('assets/js/jquery.min.js') ?>"></script>

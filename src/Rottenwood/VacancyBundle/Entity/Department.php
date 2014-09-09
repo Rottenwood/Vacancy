@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Department
- * @ORM\Table(name="department")
+ * @ORM\Table(name="departments")
  * @ORM\Entity(repositoryClass="Rottenwood\VacancyBundle\Repository\DepartmentRepository")
  */
 class Department {
@@ -20,11 +20,11 @@ class Department {
     private $id;
 
     /**
+     * Name of the department
      * @var string
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-
 
     /**
      * Get id

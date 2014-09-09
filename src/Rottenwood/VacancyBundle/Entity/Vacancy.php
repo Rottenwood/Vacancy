@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Vacancy
- * @ORM\Table(name="vacancy")
+ * @ORM\Table(name="vacancies")
  * @ORM\Entity(repositoryClass="Rottenwood\VacancyBundle\Repository\VacancyRepository")
  */
 class Vacancy {
@@ -20,23 +20,18 @@ class Vacancy {
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Department")
-     * @ORM\JoinColumn(name="department_id", referencedColumnName="id", nullable=false)
-     */
-    private $department;
-
-    /**
+     * Default title of vacancy in English
      * @var string
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $name;
+    private $title;
 
     /**
+     * Default description of vacancy in English
      * @var string
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-
 
     /**
      * Get id
@@ -47,53 +42,29 @@ class Vacancy {
     }
 
     /**
-     * Set Department
-     * @param Department $department
+     * Set title
+     * @param string $title
      */
-    public function setDepartment($department) {
-        $this->department = $department;
+    public function setTitle($title) {
+        $this->title = $title;
     }
 
     /**
-     * Get Department
-     * @return Department
-     */
-    public function getDepartment() {
-        return $this->department;
-    }
-
-    /**
-     * Set name
-     * @param string $name
-     * @return Vacancy
-     */
-    public function setName($name) {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
+     * Get title
      * @return string
      */
-    public function getName() {
-        return $this->name;
+    public function getTitle() {
+        return $this->title;
     }
 
     /**
-     * Set description
      * @param string $description
-     * @return Vacancy
      */
     public function setDescription($description) {
         $this->description = $description;
-
-        return $this;
     }
 
     /**
-     * Get description
      * @return string
      */
     public function getDescription() {

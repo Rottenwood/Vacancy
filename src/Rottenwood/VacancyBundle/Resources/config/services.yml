@@ -2,6 +2,7 @@ parameters:
     vacancy.service.class: Rottenwood\VacancyBundle\Service\VacancyService
 
 services:
+    # main service of application
     vacancy.service:
         class: %vacancy.service.class%
         arguments: [@doctrine.orm.entity_manager]

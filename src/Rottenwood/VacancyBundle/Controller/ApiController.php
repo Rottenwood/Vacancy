@@ -6,7 +6,6 @@
 
 namespace Rottenwood\VacancyBundle\Controller;
 
-use Rottenwood\VacancyBundle\Entity\Vacancy;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,18 +16,31 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ApiController extends Controller {
 
+    /**
+     * API: Get all departments names
+     * @return JsonResponse
+     */
     public function getDepartmentsAction() {
         $departments = $this->get('vacancy.service')->getDepartments();
 
         return new JsonResponse($departments);
     }
 
+    /**
+     * API: Get all languages
+     * @return JsonResponse
+     */
     public function getLanguagesAction() {
         $languages = $this->get('vacancy.service')->getLanguages();
 
         return new JsonResponse($languages);
     }
 
+    /**
+     * API: Get all vacancies in chosen department and language
+     * @param Request $request
+     * @return JsonResponse
+     */
     public function getVacanciesAction(Request $request) {
         $department = $request->request->get('department');
         $language = $request->request->get('language');

@@ -13,11 +13,19 @@ use Rottenwood\VacancyBundle\Entity\Language;
 use Rottenwood\VacancyBundle\Entity\Translation;
 use Rottenwood\VacancyBundle\Entity\Vacancy;
 
+/**
+ * Fixtures for database
+ * @package Rottenwood\VacancyBundle\DataFixtures\ORM
+ */
 class LoadVacancyData implements FixtureInterface {
 
     /** @var ObjectManager $om */
     private $om;
 
+    /**
+     * Loading fixtures into database
+     * @param ObjectManager $objectManager
+     */
     public function load(ObjectManager $objectManager) {
         $this->om = $objectManager;
 

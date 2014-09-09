@@ -11,7 +11,6 @@ use Rottenwood\VacancyBundle\Entity\Department;
 use Rottenwood\VacancyBundle\Entity\Language;
 use Rottenwood\VacancyBundle\Entity\Translation;
 use Rottenwood\VacancyBundle\Entity\Vacancy;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Main service of Vacancy application
@@ -33,6 +32,10 @@ class VacancyService {
         $this->languageRepository = $this->em->getRepository("RottenwoodVacancyBundle:Language");
     }
 
+    /**
+     * Get all departments from the database
+     * @return array
+     */
     public function getDepartments() {
         $departmentsArray = $this->departmentRepository->findAll();
         $departments = array();
@@ -45,6 +48,10 @@ class VacancyService {
         return $departments;
     }
 
+    /**
+     * Get all languages from the database
+     * @return array
+     */
     public function getLanguages() {
         $languagesArray = $this->languageRepository->findAll();
         $languages = array();
@@ -57,6 +64,15 @@ class VacancyService {
         return $languages;
     }
 
+    /**
+     * Get list of vacancies in chosen department and language
+     * First I get all vacancies of the department,
+     * then all vacancies that are translated, and merging them
+     * according to Vacancy identificator
+     * @param $department
+     * @param $language
+     * @return array
+     */
     public function getVacancies($department, $language) {
         $vacanciesAll = $this->vacancyRepository->findByDepartment($department);
         $vacanciesTranslated = $this->translationRepository->findTranslations($vacanciesAll, $language);

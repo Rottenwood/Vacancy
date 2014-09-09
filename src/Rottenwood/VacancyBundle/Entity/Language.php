@@ -20,6 +20,7 @@ class Language {
     private $id;
 
     /**
+     * Name of the language
      * @var string
      * @ORM\Column(name="name", type="string", length=255)
      */

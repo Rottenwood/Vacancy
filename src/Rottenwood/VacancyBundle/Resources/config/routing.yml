@@ -5,12 +5,14 @@ index:
 api_vacancy_list:
     path:   /api/vacancy/list
     defaults: { _controller: RottenwoodVacancyBundle:Api:getVacancies }
-#    requirements: { _method: POST }
+    requirements: { _method: POST }
 
 api_department_list:
     path:   /api/department/list
     defaults: { _controller: RottenwoodVacancyBundle:Api:getDepartments }
+    requirements: { _method: POST }
 
 api_language_list:
     path:   /api/language/list
     defaults: { _controller: RottenwoodVacancyBundle:Api:getLanguages }
+    requirements: { _method: POST }
